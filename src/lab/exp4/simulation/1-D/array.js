@@ -84,9 +84,13 @@ window.view = {
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked )
-			this.generateRandomNumbers()
+			{this.generateRandomNumbers();
+				this.disableButton(element[1].id)
+				
+			}
 		else if (element[1].checked)
-			this.getUserInput()
+			{this.getUserInput();
+				this.disableButton(element[0].id);}
 	},
 	createBoxes: function() {
 		for ( i = 0 ; i < this.numbers.length ; i++ ) {
